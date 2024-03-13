@@ -56,3 +56,18 @@ function checkCanyon(t_canyon) {
 
 
 }
+
+//CHECK DEATH
+function checkPlayerDie() {
+    if (gameChar_y > height * 1.5) {
+        lives = lives - 1;
+        if (lives > 0) {
+            hasPlayedFallingSound = false;
+            gameChar_y = floorPos_y;
+            gameChar_x = width / 2;
+            isPlummeting = false;
+        }
+
+    }
+
+}

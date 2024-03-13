@@ -1,5 +1,7 @@
 //Platforms
 
+//Platforms
+
 function createPlatforms(x, y, length) {
     var p = {
         x: x,

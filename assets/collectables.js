@@ -82,3 +82,18 @@ function checkCollectable(t_collectable) {
         game_score++;
     }
 }
+
+function keepScore() {
+    noStroke();
+    fill(0);
+    textSize(40);
+    text(game_score + '/10', 60, 20, 200, 200);
+    noStroke();
+    fill(207, 181, 59);
+    ellipse(30, 38, 40);
+    fill(255, 223, 0);
+    ellipse(30, 38, 40 * 0.7);
+    stroke(10);
+    fill(0);
+    noStroke();
+}
