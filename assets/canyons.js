@@ -36,7 +36,6 @@ function drawCanyon(t_canyon) {
 
 
 function checkCanyon(t_canyon) {
-    var current_x = gameChar_x
     if (gameChar_x - 10 > t_canyon.x_pos && gameChar_x + 10 < t_canyon.x_pos + t_canyon.width && gameChar_y >= floorPos_y) {
         isPlummeting = true;
         if (!hasPlayedFallingSound) {
