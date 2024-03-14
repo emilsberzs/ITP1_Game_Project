@@ -1,3 +1,5 @@
+floorPos_y = 432;
+
 collectables = [
     {
         x_pos: 180,
@@ -58,29 +60,33 @@ collectables = [
         y_pos: floorPos_y - 320,
         size: 25,
         isFound: false
-    },
+    }
 ]
 
-function drawCollectable(t_collectable) {
-    if (!t_collectable.isFound) {
-        noStroke();
-        fill(207, 181, 59);
-        ellipse(t_collectable.x_pos, t_collectable.y_pos, t_collectable.size);
-        fill(255, 223, 0);
-        ellipse(t_collectable.x_pos, t_collectable.y_pos, t_collectable.size * 0.7);
-        stroke(10);
-        fill(0);
-        noStroke();
-    }
+
+function drawCollectables() {
+    for (i = 0; i < collectables.length; i++)
+        if (!collectables[i].isFound) {
+            noStroke();
+            fill(207, 181, 59);
+            ellipse(collectables[i].x_pos, collectables[i].y_pos, collectables[i].size);
+            fill(255, 223, 0);
+            ellipse(collectables[i].x_pos, collectables[i].y_pos, collectables[i].size * 0.7);
+            stroke(10);
+            fill(0);
+            noStroke();
+        }
 }
 
 
-function checkCollectable(t_collectable) {
-    if (dist(gameChar_x, gameChar_y, t_collectable.x_pos, t_collectable.y_pos) < t_collectable.size && t_collectable.isFound == false) {
+function checkCollectables() {
+    for (i = 0; i < collectables.length; i++) { 
+    if (dist(gameChar_x, gameChar_y, collectables[i].x_pos, collectables[i].y_pos) < collectables[i].size && collectables[i].isFound == false) {
         collectCoinSound.play();
-        t_collectable.isFound = true;
+        collectables[i].isFound = true;
         game_score++;
     }
+}
 }
 
 function keepScore() {

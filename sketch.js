@@ -108,15 +108,8 @@ function draw() {
     checkFlagpole();
     checkPlayerDie();
     drawPlatforms();
-
-
-    //COLLECTABLE DRAW AND CHECK
-    for (i = 0; i < collectables.length; i++) {
-        drawCollectable(collectables[i]);
-        checkCollectable(collectables[i]);
-    }
-
-    //CANYON DRAW AND CHECK
+    drawCollectables()
+    checkCollectables()
     for (i = 0; i < canyons.length; i++) {
         drawCanyon(canyons[i]);
         checkCanyon(canyons[i]);
@@ -227,68 +220,68 @@ function startGame() {
     isFalling = false;
     isPlummeting = false;
 
-    collectables = [
-        {
-            x_pos: 180,
-            y_pos: 413,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 580,
-            y_pos: 413,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 910,
-            y_pos: 413,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1050,
-            y_pos: floorPos_y - 70,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1150,
-            y_pos: floorPos_y - 120,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1250,
-            y_pos: floorPos_y - 170,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1350,
-            y_pos: floorPos_y - 220,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1550,
-            y_pos: 380,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1880,
-            y_pos: 413,
-            size: 25,
-            isFound: false
-        },
-        {
-            x_pos: 1350,
-            y_pos: floorPos_y - 320,
-            size: 25,
-            isFound: false
-        },
-    ]
+    // collectables = [
+    //     {
+    //         x_pos: 180,
+    //         y_pos: 413,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 580,
+    //         y_pos: 413,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 910,
+    //         y_pos: 413,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1050,
+    //         y_pos: floorPos_y - 70,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1150,
+    //         y_pos: floorPos_y - 120,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1250,
+    //         y_pos: floorPos_y - 170,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1350,
+    //         y_pos: floorPos_y - 220,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1550,
+    //         y_pos: 380,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1880,
+    //         y_pos: 413,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    //     {
+    //         x_pos: 1350,
+    //         y_pos: floorPos_y - 320,
+    //         size: 25,
+    //         isFound: false
+    //     },
+    // ]
 
 
 
